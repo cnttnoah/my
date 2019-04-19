@@ -9,7 +9,7 @@ public class service{
 	String t;
 	DecimalFormat dc =new DecimalFormat("##,###");	// 숫자 입력 형식 표현을 위해 ex 10000 >> 10,000
 
-	
+	  
 	public parameter Service(String btn,parameter Par) {
 		// TODO Auto-generated method stub
 		int num=2;

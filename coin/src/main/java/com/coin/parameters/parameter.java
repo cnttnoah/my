@@ -8,7 +8,7 @@ public class parameter {
 	String price;	// 총 가격
 	String[] str_P;		// 동전 값 >> K값에 따라 main.jsp에서 생성됨
 	String[] str_N;		// 동전 개수 >> K값에 따라 main.jsp에서 생성됨
-	
+	 
 	String result;		// 계산된 동전 경우수
 	String str;		// 출력할 결과 (동전 계산법 + 형식)
 	public String getNum() {
