@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,14 +22,14 @@
 </pre>
 
 <%
-int num=2;
-/*String s = (String)request.getAttribute("num");
+int num=1;
+String s=(String)request.getAttribute("number");
 if(s != null){
 	num = Integer.parseInt(s);
-}*/
-out.print("num은 : "+num);
-String str_P="P";
-String str_N="N";
+}
+
+String str_P;
+String str_N;
 for(int i=0;i<num;i++){
 	str_P="str_P["+i+"]";
 	str_N="str_N["+i+"]";
@@ -43,9 +42,6 @@ for(int i=0;i<num;i++){
 <pre>		<input type="submit" value="계산" size="5" name="btn"></pre>
 </form>
 <HR>
-Result : ${Par.result}<br>
-Str : ${Par.str}<br>
-Num : ${Par.num}
-
+${Par.str}<br>
 </body>
 </html>

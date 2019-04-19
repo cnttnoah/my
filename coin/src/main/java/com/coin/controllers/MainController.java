@@ -17,17 +17,17 @@ import com.coin.services.service;
 public class MainController {
 	@Autowired
 	service service;
+	int num=1;
 	
 	@RequestMapping(value = "/main", method =RequestMethod.GET)
 	public String mainForm() {
 		return "main";
 	}
 			
-	@RequestMapping(value="/main", method=RequestMethod.POST) // GET방식과 POST방식이 가능하게 해둔다
-	public String main(Model model,HttpServletRequest request, @ModelAttribute ("Par") parameter Par, @RequestParam(value="btn",required=true) String btn) {
-		Par.setNum(service.Service(btn, Par).getNum());
-		
-		
+	@RequestMapping(value="/main", method=RequestMethod.POST)
+	public String main(Model model,HttpServletRequest request, @ModelAttribute ("Par") parameter Par){
+		num=service.Service(num, Par);
+		request.setAttribute("number", String.valueOf(num));
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main");
 		
