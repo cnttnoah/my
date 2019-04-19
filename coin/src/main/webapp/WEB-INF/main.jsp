@@ -17,33 +17,35 @@
 
 <form name=form1 method=post>
 <pre>
-지폐금액		<INPUT TYPE="number" NAME="T" size="17" min="1" max="10000"><br>
-동전의 가지 수		<input type="submit" value="+" name="action"/>  <input type="submit" value="-" name="action"/><br>
+지폐금액		<INPUT TYPE="number" NAME="price" size="17" min="1" max="10000"><br>
+동전의 가지 수		<input type="submit" value="+" name="btn"/>  <input type="submit" value="-" name="btn"/><br>
 			동전금액	개수
 </pre>
 
 <%
-int K=1;
-String aaa = (String)request.getAttribute("KK");
-if(aaa != null){
-	K = Integer.parseInt(aaa);
-}
-
+int num=2;
+/*String s = (String)request.getAttribute("num");
+if(s != null){
+	num = Integer.parseInt(s);
+}*/
+out.print("num은 : "+num);
 String str_P="P";
 String str_N="N";
-for(int i=0;i<K;i++){
-	str_P="P"+i;
-	str_N="N"+i;
+for(int i=0;i<num;i++){
+	str_P="str_P["+i+"]";
+	str_N="str_N["+i+"]";
 	out.print("<pre>			");
 	out.print("<INPUT TYPE=\"number\" NAME="+str_P+" min=\"1\" max=\"10000\">	<INPUT TYPE=\"number\" NAME="+str_N+" min=\"1\" max=\"10000\"><br>");
 	out.print("</pre>");
 }
 %>
 
-<pre>		<input type="submit" value="계산" size="5" name="action"></pre>
+<pre>		<input type="submit" value="계산" size="5" name="btn"></pre>
 </form>
 <HR>
-${result}<br>
-${str}
+Result : ${Par.result}<br>
+Str : ${Par.str}<br>
+Num : ${Par.num}
+
 </body>
 </html>
